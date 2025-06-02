@@ -1,0 +1,110 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+.sidebar{
+    opacity: 0;
+    background-color: v.$indigo;
+    height: 0;
+    overflow: hidden;
+    transition-property: opacity;
+    transition-duration: .7s;
+  
+    &.mostrar{
+        padding: 2rem;
+        opacity: 1;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(67, 52, 202, 0.90);
+
+        @include m.tablet{
+            display: none;
+        }
+    }
+    &.ocultar {
+        opacity: 0;
+    }
+
+    @include m.tablet{
+        opacity: 1;
+        height: 100%;
+        padding: 2rem;
+    }   
+
+    .contenedor-sidebar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2{
+            color: v.$blanco;
+            margin: 0;
+            text-align: center;
+        }
+        .cerrar-menu{
+            img{
+                width: 2rem;
+                &:hover{
+                    cursor: pointer;
+                }
+                @include m.tablet {
+                    display: none;
+                }   
+            }            
+        }
+    }
+
+    .sidebar-nav{    
+        margin-top: 4rem;
+        a{
+            color: v.$blanco;
+            display: block;
+            padding: 1rem;
+            transition-property: background-color;
+            transition-duration: 300ms;
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+
+            &:hover,
+            &.activo{
+                background-color: darken($color: v.$indigo, $amount: 10);
+                border-radius: 1rem;
+            }
+
+            @include m.tablet{
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+                text-align: left;
+            }
+        }
+    }
+
+    .cerrar-sesion-mobile{
+        margin-top: 5rem;
+        a{
+            color: v.$blanco;
+            display: block;
+            padding: 1rem;
+            transition-property: background-color;
+            transition-duration: 300ms;
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+
+            &:hover,
+            &.activo{
+                background-color: darken($color: v.$rojo, $amount: 10);
+                border-radius: 1rem;
+            }
+        }
+
+        @include m.tablet{
+            display: none;
+        }
+    }
+}

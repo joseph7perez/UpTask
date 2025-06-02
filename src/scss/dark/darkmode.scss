@@ -1,0 +1,94 @@
+@use '../base/variables' as v;
+@use '../base/mixins' as m;
+
+$grisOscuro: #2c2c3b;
+
+@media (prefers-color-scheme: dark) {
+
+    body,
+    .dashboard {
+        background-color: $grisOscuro;
+    }
+
+    .tagline,
+    .login .acciones a,
+    .crear .acciones a,
+    .olvide .acciones a{
+        color: v.$blanco;
+    }
+
+    .descripcion-pagina,
+    .formulario label,
+    .nombre-pagina,
+    .listado-tareas .tarea p, 
+    .barra p{
+        color: v.$grisClaro;
+    }
+
+    .formulario .campo input,
+    .dashboard .formulario input:not([type=submit]) {
+        background-color: lighten($color: $grisOscuro, $amount: 15);
+        color: v.$blanco;  
+
+        &::placeholder{
+            color: darken($color: v.$grisClaro, $amount: 20);
+        }
+               
+    }
+
+    .alerta.error{
+        background-color: v.$grisClaro;
+    }
+    @include m.tablet{
+        .sidebar {
+            background-color: rgba(15, 10, 56, 0.8);
+
+        }
+    }
+
+    .barra-mobile{
+        background-color: darken($color: v.$grisOscuro, $amount: 10);
+    }
+
+
+    .barra,
+    .barra-mobile,
+    .sidebar.mostrar,
+    .listado-proyectos .proyecto a{
+        background-color: rgb(10 7 38 / 90%);
+    }
+
+    .dashboard .enlace{
+        color: v.$blanco;
+        &:hover{
+            color: darken($color: v.$grisClaro, $amount: 20);
+        }
+    }
+
+    .filtros{
+        background-color: lighten($color: v.$grisOscuro, $amount: 20) ;
+        h2,
+        label{
+            color: v.$blanco;
+        }
+        .campo input[type=radio]{
+            accent-color: rgba(172, 79, 9, 0.9);;
+        }
+    }
+
+    .listado-tareas .tarea{
+        border: none;
+    }
+
+    .modal .formulario{
+        background-color: darken($color: v.$grisOscuro, $amount: 10);
+        legend{
+            color: v.$grisClaro;
+        }
+        input[type=text]{
+            &::placeholder{
+                color: darken($color: v.$grisClaro, $amount: 20);
+            }
+        }
+    }
+}

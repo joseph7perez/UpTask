@@ -1,0 +1,37 @@
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos temporales y de caché
+*.log
+*.cache
+*.tmp
+*.bak
+
+# Configuración de entornos locales
+.env
+.env.*
+config.php
+database.php
+
+# Directorios comunes
+/vendor/
+node_modules/
+composer.lock
+package-lock.json
+
+# Archivos y carpetas del editor/IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de bases de datos locales
+*.sql
+*.sqlite
+*.db
+
+# Otros posibles
+*.zip
+*.tar.gz
+*.rar
